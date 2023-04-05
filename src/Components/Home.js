@@ -65,9 +65,9 @@ function Home() {
         
 
         </div>
-        <div className='flex  justify-center py-5 '>
-            <input className='rounded-full p-2 mx-3 hover:outline-1' type="text" placeholder='Category' onChange={(e)=>setInput(e.target.value)} />
-        <button class="rounded-full bg-neutral-800 text-white py-2 px-4 text-2sm hover:bg-neutral-700 " onClick={getQuote}>Generate</button>
+        <div className='flex  justify-center py-5 p-3  '>
+            <input className='rounded-full p-2 mx-3 hover:outline-1 text-sm ' type="text" placeholder='Category' onChange={(e)=>setInput(e.target.value)} />
+        <button class="rounded-full bg-neutral-800 text-white py-2 px-4 text-sm hover:bg-neutral-700 " onClick={getQuote}>Generate</button>
         </div>
        
        

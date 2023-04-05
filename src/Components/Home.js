@@ -76,7 +76,7 @@ function Home() {
 
         <div className='flex flex-col   sm:flex-row  justify-center py-5 p-3  '>
             <input className='rounded-full p-1 m-2 sm:p-2 sm:px-3 hover:outline-1  outline-[#262626] text-center text-sm  text-gray-800 ' type="text" placeholder='Category' onChange={(e)=>setInput(e.target.value)} />
-        <button class="rounded-full bg-neutral-800 p-1 text-white m-2  sm:p-2 sm:px-3 text-sm hover:bg-neutral-700  " onClick={getQuote}>Generate</button>
+        <button className="rounded-full bg-neutral-800 p-1 text-white m-2  sm:p-2 sm:px-3 text-sm hover:bg-neutral-700  " onClick={getQuote}>Generate</button>
         </div>
         </div>
        
@@ -84,7 +84,7 @@ function Home() {
 
 
      
-      <span className='text-white flex items-end text-[10px]'>&copy; <a href="https://github.com/anwarjunaidkm">github.com/anwarjunaidkm</a> </span>
+      <span className='text-white flex items-end text-[10px]'> &copy;  <a href="https://github.com/anwarjunaidkm">github.com/anwarjunaidkm</a> </span>
       </div>
 
     </div>

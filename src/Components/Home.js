@@ -38,8 +38,8 @@ function Home() {
   
   return (
     <div className=" bg-[#141416] h-screen w-full">
-      <div className="flex  flex-col justify-center  items-center p-4 h-full">
-        <div className="max-w-[500px]  w-full text-white ">
+      <div className="flex  flex-col justify-center  items-center p-4 w-full h-full">
+        <div className="max-w-[500px]  w-full text-white  ">
         <h1 className='flex justify-center'>
           <p>
 
@@ -52,9 +52,9 @@ function Home() {
            
             </span> 
             &rdquo;
-           <div className='flex  justify-end  py-1'>
+           <div className='flex  justify-end w-full py-1'>
 
-             <h1>{state?.author}</h1> 
+             <h1 className='text-[10px]'>{state?.author}</h1> 
               
           </div>
         
@@ -64,18 +64,19 @@ function Home() {
         
         
 
+        <div className='flex flex-col   sm:flex-row  justify-center py-5 p-3  '>
+            <input className='rounded-full p-1 m-2 sm:p-2 sm:px-3 hover:outline-1 text-sm   ' type="text" placeholder='Category' onChange={(e)=>setInput(e.target.value)} />
+        <button class="rounded-full bg-neutral-800 p-1 text-white m-2  sm:p-2 sm:px-3 text-sm hover:bg-neutral-700  " onClick={getQuote}>Generate</button>
         </div>
-        <div className='flex  justify-center py-5 p-3  '>
-            <input className='rounded-full p-2 mx-3 hover:outline-1 text-sm ' type="text" placeholder='Category' onChange={(e)=>setInput(e.target.value)} />
-        <button class="rounded-full bg-neutral-800 text-white py-2 px-4 text-sm hover:bg-neutral-700 " onClick={getQuote}>Generate</button>
         </div>
        
        
 
 
      
-        <span className='text-white text-[10px]'>&copy; <a href="https://github.com/anwarjunaidkm">github.com/anwarjunaidkm</a> </span>
+      <span className='text-white flex items-end text-[10px]'>&copy; <a href="https://github.com/anwarjunaidkm">github.com/anwarjunaidkm</a> </span>
       </div>
+
     </div>
   );
 }

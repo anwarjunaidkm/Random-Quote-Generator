@@ -1,9 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import ReactLoading from 'react-loading';
+
 
 function Home() {
   const [state,setState] = useState('')
   const [input,setInput] = useState('')
+  const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+
   console.log(input);
 
 
@@ -24,19 +30,23 @@ function Home() {
       
     } catch (error) {
       console.error(error);
+    } finally{
+      setLoading(false)
     }
   }
 
-  useEffect(()=>{
-
-   
-    getQuote()
-
-
-  },[])
+  useEffect(() => {
+    if (!mounted) {
+      setMounted(true);
+      getQuote();
+    }
+  }, [mounted]);
 
   
   return (
+    <>
+      {loading && <div className="flex  items-center justify-center bg-[#141416] h-screen w-full"  > <ReactLoading className="" type="bubbles" color="#ffff" /></div>}
+
     <div className=" bg-[#141416] h-screen w-full">
       <div className="flex  flex-col justify-center  items-center p-4 w-full h-full">
         <div className="max-w-[500px]  w-full text-white  ">
@@ -54,7 +64,7 @@ function Home() {
             &rdquo;
            <div className='flex  justify-end w-full py-1'>
 
-             <h1 className='text-[10px]'>{state?.author}</h1> 
+             <h1 className='text-[10px]'>-{state?.author}</h1> 
               
           </div>
         
@@ -78,6 +88,7 @@ function Home() {
       </div>
 
     </div>
+    </>
   );
 }
 
